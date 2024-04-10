@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# README - Projeto Curved
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Sobre
 
-## Available Scripts
+Curved é um projeto desenvolvido para uma empresa fictícia de fotografia chamada "Curved". O objetivo deste projeto é fornecer um site onde a empresa possa exibir suas fotografias categorizadas para seus clientes. O site permite a adição de novas imagens em categorias personalizadas, oferecendo um ambiente exclusivo para interação entre cliente e empresa, evitando a dependência de redes sociais.
 
-In the project directory, you can run:
+## Tecnologias Utilizadas
 
-### `npm start`
+Curved foi desenvolvido utilizando CSS e React. Apesar da simplicidade atual, estas tecnologias oferecem um vasto potencial para futuras expansões e melhorias no projeto.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Fase de Desenvolvimento
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+O projeto Curved encontra-se em sua fase inicial, apresentando uma funcionalidade básica e direta, cumprindo seu propósito principal. Apesar da simplicidade atual, o site está sempre aberto para melhorias e novas funcionalidades que possam beneficiar tanto a empresa quanto os clientes.
 
-### `npm test`
+## Dificuldades Encontradas
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Durante o desenvolvimento do site, foram enfrentadas algumas dificuldades, principalmente relacionadas ao front-end. Problemas como alinhamento de imagens no grid, ajustes de altura das divs e problemas de desempenho devido ao tamanho e qualidade das imagens foram desafios superados durante o processo de desenvolvimento.
 
-### `npm run build`
+## Problemas Identificados
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Um dos principais problemas identificados no projeto Curved é a ausência de um back-end dedicado. Isso impede a obtenção dinâmica de imagens, levando à importação direta das imagens do App React. Além disso, a decisão de não utilizar frameworks de estilização como "styled components", optando pelo uso de CSS puro, apresentou desafios adicionais durante o desenvolvimento.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Aprendizado
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Durante o desenvolvimento do front-end do projeto, foram explorados recursos e referências que contribuíram para o aprimoramento do design e da experiência do usuário. Websites como [Dev.to - Top 20 CSS Buttons Animations](https://dev.to/webdeasy/top-20-css-buttons-animations-f41) e [CSS-Tricks - The Current State of Styling Scrollbars in CSS](https://css-tricks.com/the-current-state-of-styling-scrollbars-in-css/) foram especialmente úteis para criar botões e barras de rolagem estilizados, agregando valor ao projeto final.
 
-### `npm run eject`
+## Conclusão
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+O projeto Curved é uma demonstração inicial do potencial de uma plataforma digital dedicada à exibição de fotografias de maneira organizada e cativante. Embora ainda haja espaço para melhorias e expansões futuras, o projeto atual representa um importante passo na construção de uma presença online para a empresa fictícia "Curved".
