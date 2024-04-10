@@ -1,4 +1,3 @@
-
 import "./index.css";
 import imagem1 from "./assets/imagens/imagem1.jpg";
 import imagem2 from "./assets/imagens/imagem2.jpg";
@@ -27,31 +26,46 @@ import imagem24 from "./assets/imagens/imagem24.jpg";
 import imagem25 from "./assets/imagens/imagem25.jpg";
 import imagem26 from "./assets/imagens/imagem26.jpg";
 import imagem27 from "./assets/imagens/imagem27.jpg";
-import React , {useState} from 'react';
+import logo from "./assets/imagens/logo512.png";
+import React, { useState } from "react";
 
 function App() {
-  
-const[selectBtn, setSelectBtn] = useState();
+  const [selectBtn, setSelectBtn] = useState();
 
-function handleClickTabs(tabName) {                        //useState
+  function handleClickTabs(tabName) {
+    //useState
 
- setSelectBtn(tabName)
-  console.log(selectBtn)
-  
-}
+    setSelectBtn(tabName);
+    console.log(selectBtn);
+  }
   return (
     <div className="App">
       <div className="App2">
-        <p className="title">Curved</p>
+        <div className="logo">
+          <img className="imageLogo" src={logo} alt=""/>
+          <p className="title">Curved</p>
+        </div>
 
         <div className="header">
-          <button onClick={() => handleClickTabs("fotos1")} className="btn">
+          <button
+            onClick={() => handleClickTabs("fotos1")}
+            className="btn"
+            id={`fotos${selectBtn === "fotos1" ? "Selected" : ""}`}
+          >
             Animais
           </button>
-          <button onClick={() => handleClickTabs("fotos2")} className="btn">
+          <button
+            onClick={() => handleClickTabs("fotos2")}
+            className="btn"
+            id={`fotos${selectBtn === "fotos2" ? "Selected" : ""}`}
+          >
             Cidades
           </button>
-          <button onClick={() => handleClickTabs("fotos3")} className="btn">
+          <button
+            onClick={() => handleClickTabs("fotos3")}
+            className="btn"
+            id={`fotos${selectBtn === "fotos3" ? "Selected" : ""}`}
+          >
             Paisagens
           </button>
         </div>
