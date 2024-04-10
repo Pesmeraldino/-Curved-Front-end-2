@@ -46,6 +46,7 @@ body {
   gap: 16px;
   justify-content: center;
   max-height: 100%;
+  justify-content: start;
 }
 
 
@@ -55,11 +56,14 @@ body {
   padding: 16px;
   gap: 16px;
   justify-content: center;
-  background-color: rgba(68, 68, 68, 0.863);
+  background-color: rgba(68, 68, 68, 0.3
+  );
   margin: 16px;
   border-radius: 20px;
   max-width: 100%;
   height: 93vh;
+  justify-content: start;
+  backdrop-filter: blur(10px);
 
 }
 
@@ -107,7 +111,7 @@ body {
 }
 
 .grid li img:hover{
-  scale: 1.02;
+  scale: 1.01;
   transition: all 0.3s ease-out;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 
