@@ -1,170 +1,95 @@
 import "./index.css";
-import imagem1 from "./assets/imagens/imagem1.jpg";
-import imagem2 from "./assets/imagens/imagem2.jpg";
-import imagem3 from "./assets/imagens/imagem3.jpg";
-import imagem4 from "./assets/imagens/imagem4.jpg";
-import imagem5 from "./assets/imagens/imagem5.jpg";
-import imagem6 from "./assets/imagens/imagem6.jpg";
-import imagem7 from "./assets/imagens/imagem7.jpg";
-import imagem8 from "./assets/imagens/imagem8.jpg";
-import imagem9 from "./assets/imagens/imagem9.jpg";
-import imagem10 from "./assets/imagens/imagem10.jpg";
-import imagem11 from "./assets/imagens/imagem11.jpg";
-import imagem12 from "./assets/imagens/imagem12.jpg";
-import imagem13 from "./assets/imagens/imagem13.jpg";
-import imagem14 from "./assets/imagens/imagem14.jpg";
-import imagem15 from "./assets/imagens/imagem15.jpg";
-import imagem16 from "./assets/imagens/imagem16.jpg";
-import imagem17 from "./assets/imagens/imagem17.jpg";
-import imagem18 from "./assets/imagens/imagem18.jpg";
-import imagem19 from "./assets/imagens/imagem19.jpg";
-import imagem20 from "./assets/imagens/imagem20.jpg";
-import imagem21 from "./assets/imagens/imagem21.jpg";
-import imagem22 from "./assets/imagens/imagem22.jpg";
-import imagem23 from "./assets/imagens/imagem23.jpg";
-import imagem24 from "./assets/imagens/imagem24.jpg";
-import imagem25 from "./assets/imagens/imagem25.jpg";
-import imagem26 from "./assets/imagens/imagem26.jpg";
-import imagem27 from "./assets/imagens/imagem27.jpg";
+
 import logo from "./assets/imagens/logo512.png";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
+
+const CLIENT_ID = "2QYaRYYSz2Z4l2CdaCu7odjgZk37PceynkV3MEEg2_I";
 
 function App() {
-  const [selectBtn, setSelectBtn] = useState();
+  const [selectBtn, setSelectBtn] = useState('fotos1');
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    const fetchImages = async (query) => {
+      try {
+        const response = await axios.get(`https://api.unsplash.com/search/photos`, {
+          params: { query, client_id: CLIENT_ID, per_page: 14 },
+        });
+        console.log('API RESPONDE:', response.data);
+        setImages(response.data.results);
+      } catch (error) {
+        console.error('ERRO NAS IMAGENS', error);
+      }
+    };
+
+    switch (selectBtn) {
+      case 'fotos1':
+        fetchImages('animals');
+        break;
+      case 'fotos2':
+        fetchImages('cities');
+        break;
+      case 'fotos3':
+        fetchImages('landscapes');
+        break;
+      case 'fotos4':
+          fetchImages('foods');
+        break;
+      default:
+        fetchImages('random');
+        break;
+    }
+  }, [selectBtn]);
 
   function handleClickTabs(tabName) {
-    //useState
-
     setSelectBtn(tabName);
-    console.log(selectBtn);
   }
+
   return (
     <div className="App">
       <div className="App2">
         <div className="logo">
-          <img className="imageLogo" src={logo} alt=""/>
+          <img className="imageLogo" src={logo} alt="logo" />
           <p className="title">Curved</p>
         </div>
 
         <div className="header">
           <button
-            onClick={() => handleClickTabs("fotos1")}
-            className="btn"
-            id={`fotos${selectBtn === "fotos1" ? "Selected" : ""}`}
+            onClick={() => handleClickTabs('fotos1')}
+            className={`btn ${selectBtn === 'fotos1' ? 'btnSelected' : ''}`}
           >
             Animais
           </button>
           <button
-            onClick={() => handleClickTabs("fotos2")}
-            className="btn"
-            id={`fotos${selectBtn === "fotos2" ? "Selected" : ""}`}
+            onClick={() => handleClickTabs('fotos2')}
+            className={`btn ${selectBtn === 'fotos2' ? 'btnSelected' : ''}`}
           >
             Cidades
           </button>
           <button
-            onClick={() => handleClickTabs("fotos3")}
-            className="btn"
-            id={`fotos${selectBtn === "fotos3" ? "Selected" : ""}`}
+            onClick={() => handleClickTabs('fotos3')}
+            className={`btn ${selectBtn === 'fotos3' ? 'btnSelected' : ''}`}
           >
             Paisagens
+          </button>
+          <button
+            onClick={() => handleClickTabs('fotos4')}
+            className={`btn ${selectBtn === 'fotos4' ? 'btnSelected' : ''}`}
+          >
+            Comidas
           </button>
         </div>
 
         <ul className="grid">
-          {selectBtn === "fotos1" && (
-            <>
-              <li>
-                <img className="imagens" src={imagem1} alt="fireSpot" />
+          {images.length > 0 ? (
+            images.map((image) => (
+              <li key={image.id}>
+                <img className="imagens" src={image.urls.small} alt={image.alt_description || 'image'} />
               </li>
-              <li>
-                <img className="imagens" src={imagem2} alt="fireSpot" />
-              </li>
-              <li>
-                <img className="imagens" src={imagem6} alt="fireSpot" />
-              </li>
-              <li>
-                <img className="imagens" src={imagem3} alt="fireSpot" />
-              </li>
-              <li>
-                <img className="imagens" src={imagem4} alt="fireSpot" />
-              </li>
-              <li>
-                <img className="imagens" src={imagem5} alt="fireSpot" />
-              </li>
-              <li>
-                <img className="imagens" src={imagem7} alt="fireSpot" />
-              </li>
-              <li>
-                <img className="imagens" src={imagem8} alt="fireSpot" />
-              </li>
-              <li>
-                <img className="imagens" src={imagem9} alt="fireSpot" />
-              </li>
-            </>
-          )}
-
-          {selectBtn === "fotos2" && (
-            <>
-              <li>
-                <img className="imagens" src={imagem10} alt="fireSpot" />
-              </li>
-              <li>
-                <img className="imagens" src={imagem11} alt="fireSpot" />
-              </li>
-              <li>
-                <img className="imagens" src={imagem12} alt="fireSpot" />
-              </li>
-              <li>
-                <img className="imagens" src={imagem13} alt="fireSpot" />
-              </li>
-              <li>
-                <img className="imagens" src={imagem14} alt="fireSpot" />
-              </li>
-              <li>
-                <img className="imagens" src={imagem15} alt="fireSpot" />
-              </li>
-              <li>
-                <img className="imagens" src={imagem16} alt="fireSpot" />
-              </li>
-              <li>
-                <img className="imagens" src={imagem17} alt="fireSpot" />
-              </li>
-              <li>
-                <img className="imagens" src={imagem18} alt="fireSpot" />
-              </li>
-            </>
-          )}
-
-          {selectBtn === "fotos3" && (
-            <>
-              <li>
-                <img className="imagens" src={imagem19} alt="fireSpot" />
-              </li>
-              <li>
-                <img className="imagens" src={imagem20} alt="fireSpot" />
-              </li>
-              <li>
-                <img className="imagens" src={imagem21} alt="fireSpot" />
-              </li>
-              <li>
-                <img className="imagens" src={imagem22} alt="fireSpot" />
-              </li>
-              <li>
-                <img className="imagens" src={imagem23} alt="fireSpot" />
-              </li>
-              <li>
-                <img className="imagens" src={imagem24} alt="fireSpot" />
-              </li>
-              <li>
-                <img className="imagens" src={imagem25} alt="fireSpot" />
-              </li>
-              <li>
-                <img className="imagens" src={imagem26} alt="fireSpot" />
-              </li>
-              <li>
-                <img className="imagens" src={imagem27} alt="fireSpot" />
-              </li>
-            </>
+            ))
+          ) : (
+            <p>No images found.</p>
           )}
         </ul>
       </div>
